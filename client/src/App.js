@@ -20,8 +20,7 @@ import DevolperInfo from './components/DevolperInfo/DevolperInfo';
 
 const App = () => {
 
-
-
+  
     //this is the whole page of the app
     return (
 
@@ -30,7 +29,7 @@ const App = () => {
                 <Navbar />
                 <Routes>
                     <Route exact path="/Home" element={<Home/>}/>
-                    <Route exact path="/Dev"  element={<DevolperInfo/>}/> 
+                    <Route exact path="/Dev"   element={<DevolperInfo/>}/> 
                 </Routes>
             </Container>
         </BrowserRouter>

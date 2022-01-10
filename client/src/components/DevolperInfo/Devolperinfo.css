@@ -27,13 +27,14 @@
 
   .fineprint {
     width: 100%;
+    height: 100px;
     font-size: 1em;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     margin: 0;
-    background-color:hsla(0, 0%, 0%, 0.15);
+    background-color:hsla(0, 0%, 0%, 0);
     color:#d1d1d1;
   }
   

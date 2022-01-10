@@ -3,10 +3,9 @@ import mongoose from 'mongoose';
 const driverScheme = mongoose.Schema({
 
     name: {type: String, required: true},
-    dominosID: {type: String, required: true},
+   
 
     //creator: String,
-
     ofArrayOfBills: [Number],
     checkOutTotal: Number,
 
@@ -15,7 +14,6 @@ const driverScheme = mongoose.Schema({
         default: new Date(),
     },
 
-    notes: {type: String},
 });
 
 const PostDriver= mongoose.model('PostDriver', driverScheme);

@@ -49,7 +49,7 @@ const Navbar = () => {
                 </div>
                 <div>
 
-                    <Button component={Link} to="/History" variant="contained" className={classes.historyBox} >Past Orders</Button>
+                    <Button component={Link} to="/History" variant="contained" className={classes.historyBox} >History</Button>
               
 
                 </div>

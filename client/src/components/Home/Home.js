@@ -1,15 +1,13 @@
-import React from 'react'
-
+import React, {useState} from 'react';
+import Form  from '../Form/Form';
 
 const Home = () => {
 
-
+    const [currentId, setCurrentId] = useState(0);
 
     return (
         
-        <div>
-            hllo!
-        </div>
+       <Form  currentId={currentId} setCurrentId={setCurrentId}/> 
     
     )  
 }

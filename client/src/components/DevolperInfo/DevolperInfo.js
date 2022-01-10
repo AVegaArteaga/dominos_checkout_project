@@ -28,7 +28,6 @@ const DevolperInfo = () => {
     
     return (
         <div>
-            <h2>Fade Effect</h2>
             <div className="slide-container">
             <Slide arrows={false} {...fadeProperties}>
                 <div className="each-fade">
@@ -60,8 +59,8 @@ const DevolperInfo = () => {
                     <p>
                         For Social Media Stuff:<br></br><br></br>
                         SnapChat: abelvega1<br></br>
-                        Steam: 105277970
-                        Email: abelvega102@gmail.com
+                        Steam: 105277970<br></br>
+                        Email: abelvega102@gmail.com<br></br>
 
                     </p>
                 </div>
@@ -69,7 +68,7 @@ const DevolperInfo = () => {
         </div>
 
         <p className='fineprint'>
-            I do not owen the Dominos logo, just doing this for fun. Also im lazy when im counting
+            I do not own the Dominos logo, just doing this for fun. Also im lazy when im counting
         </p>    
     </div>
     );
