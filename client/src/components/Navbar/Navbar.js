@@ -1,71 +1,110 @@
 
 import React, { useEffect} from 'react';
-import { AppBar, Typography, Button } from '@material-ui/core';
+
 import {Link, useLocation} from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-import { withStyles } from "@material-ui/core/styles";
-import useStyles from './styles';
-import memories from '../../images/dominos-pizza-4-logo-png-transparent.png';
+import logo from '../../images/dominos-pizza-4-logo-png-transparent.png';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import { Stack } from '@mui/material';
+
+import { styled } from '@mui/material/styles';
+
+import { grey, red, blue, pink, white } from '@mui/material/colors';
+import styles from './styles';
+
+const ColorButtonRed = styled(Button)(({ theme }) => ({
+    
+    color: theme.palette.getContrastText(red[500]), //to maximize the contrast between the background and
+    backgroundColor: red[500],
+
+    '&:hover': {
+      backgroundColor: red[700],
+    },
+
+}));
+
+const ColorButtonGray = styled(Button)(({ theme }) => ({
+    
+    color: theme.palette.getContrastText(grey[900]), //to maximize the contrast between the background and
+    backgroundColor: grey[500],
 
 
+    '&:hover': {
+      backgroundColor: grey[700],
+    },
+
+}));
+
+const ColorButtonBlue = styled(Button)(({ theme }) => ({
+    
+    color: theme.palette.getContrastText(blue[500]), //to maximize the contrast between the background and
+    backgroundColor: blue[500],
+
+    '&:hover': {
+      backgroundColor: blue[700],
+    },
+
+}));
+
+const ColorButtonPink = styled(Button)(({ theme }) => ({
+    
+    color: theme.palette.getContrastText(pink[500]), //to maximize the contrast between the background and
+    backgroundColor: pink[500],
+
+    '&:hover': {
+      backgroundColor: pink[700],
+    },
+
+}));
+
+
+  
 
 const Navbar = () => {
-    const classes = useStyles()
-
+    
+    const classes = styles();
     // const dispatch = useDispatch();
     // const navigate = useNavigate();
     const location = useLocation(); //access to changes
 
-    // const logout = () =>{
-    //     dispatch({type: 'LOGOUT'});
-    //     navigate("/");
-    //     //setUser(null);
-    // };
 
     useEffect(() => {
         //const token = user.token;
         //setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]); //JWT Location used to update on page.
 
-
-    const WhiteTextTypography = withStyles({
-        root: {
-          color: "#0074ad"
-        }
-      })(Typography);
-
     return (
-    
-            <AppBar className={classes.appBar} position="static" color="inherit">
-                <div className={classes.brandContainer}>
-                    <WhiteTextTypography className={classes.heading} variant="h2" align="center">Check Out</WhiteTextTypography>
-                    <img className={classes.image} src={memories} alt="memories" height="60" />
-                </div>
-                <div>
+        
+        <Box margin='60px' >
+            <AppBar  sx={{ bgcolor: "#222222" }} position="fixed">
+                <Toolbar variant="dense" >
+                    
+                    
+                        <Typography variant="h8" sx={{ flexGrow: 1 }}>
+                            Check Out
+                            <img className={classes.image} src={logo} alt="memories" height={20} width={20}/>
+                        </Typography>
+                    
+                   
+                    <Stack spacing={.5} direction="row">
 
-                    <Button component={Link} to="/Home" variant="contained" className={classes.homeBox} >Home</Button>
-              
-
-                </div>
-                <div>
-
-                    <Button component={Link} to="/History" variant="contained" className={classes.historyBox} >Past Orders</Button>
-              
-
-                </div>
-                <div>
-
-                    <Button component={Link} to="/Home" variant="contained" className={classes.grahpBox} >Graph</Button>
-              
-
-                </div>
-                <div>
-
-                    <Button component={Link} to="/Dev" variant="contained" className={classes.devBox} >Dev info</Button>
-              
-
-                </div>
+                        <ColorButtonRed   component={Link} to="/Home"    size="small" size="small" variant="contained" >Home</ColorButtonRed>
+                    
+                        <ColorButtonGray  component={Link} to="/History" size="small" size="small" variant="contained" >Past </ColorButtonGray>
+                    
+                        <ColorButtonBlue  component={Link} to="/Graph"   size="small" size="small" variant="contained" >Graph</ColorButtonBlue>
+                    
+                        <ColorButtonPink  component={Link} to="/Dev"     size="small" size="small" variant="contained" >Dev</ColorButtonPink>
+                    </Stack>
+                    
+                    
+                </Toolbar>  
             </AppBar>
+        </Box>
+        
 
     );
 };

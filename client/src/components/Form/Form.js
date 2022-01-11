@@ -66,10 +66,10 @@ const Form = ({ currentId, setCurrentId }) =>{
     return (
         <Grow in>
             <Container>
-                    <Grid container justifyContent='space-between' alignItems="stretch" spacing={3}>
+                    <Grid container justifyContent='center' alignItems="stretch" spacing={4}>
                         <Grid item xs={12} sm={4}>
                             <Paper className={classes.paper} >
-                                <Typography  variant="h6" align='center'>Check Out Form</Typography>
+                                <Typography  variant="h5" align='center'>Enter your tips</Typography>
                                   <TextField className={classes.textSpace} fullWidth variant="outlined" label="1x"    onBlur={(e) => {var data = postData; data.bill1   = e.target.value; setPostData(data)}} ></TextField>
                                   <TextField className={classes.textSpace} fullWidth variant="outlined" label="5x"    onBlur={(e) => {var data = postData; data.bill5   = e.target.value; setPostData(data)}} ></TextField>
                                   <TextField className={classes.textSpace} fullWidth variant="outlined" label="10x"   onBlur={(e) => {var data = postData; data.bill10  = e.target.value; setPostData(data)}} ></TextField>
@@ -80,7 +80,7 @@ const Form = ({ currentId, setCurrentId }) =>{
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Paper className={classes.paper} >
-                                <Typography variant="h6" align='center'>Check Out Form</Typography>
+                                <Typography variant="h5" align='center'>Money owe and name</Typography>
                                 <TextField className={classes.textSpace} fullWidth variant="outlined" name="checkOutTotal" label="Money owed to store"  onBlur={(e) => setPostData({ ...postData, checkOutTotal: e.target.value})}></TextField>
                                 <TextField className={classes.textSpace} fullWidth variant="outlined" name="name"          label="Name" onBlur={(e) => setPostData({ ...postData, name: e.target.value })}></TextField>
                                 
@@ -91,7 +91,7 @@ const Form = ({ currentId, setCurrentId }) =>{
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Paper className={classes.paper} >
-                                <Typography variant="h6" align='center'>Tips you keep</Typography>
+                                <Typography variant="h5" align='center'>Tips you keep</Typography>
                                 <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label="  1x" value={String(outPostData.bill1)}></TextField>
                                 <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label="  5x" value={String(outPostData.bill5)}></TextField>
                                 <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label=" 10x" value={String(outPostData.bill10)}></TextField>

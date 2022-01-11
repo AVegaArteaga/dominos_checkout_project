@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { pink } from '@material-ui/core/colors';
 //import { deepPurple } from '@material-ui/core/colors';
 
 
@@ -13,18 +14,19 @@ export default makeStyles((theme) => ({
     borderRadius: 15,
     margin: '30px 0',
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    
     padding: '10px 50px',
-    background: '#222222',
+
   },
+  
   heading: {
     color: 'rgba(0,183,255, 1)',
     textDecoration: 'none',
   },
   image: {
-    marginLeft: '15px',
+    marginLeft: '5px',
   },
   toolbar: {
     display: 'flex',
