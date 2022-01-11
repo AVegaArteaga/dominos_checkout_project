@@ -23,9 +23,9 @@ export const createPost = async (req, res) => {
     const newPostMessage = new PostDriver({ ...post, createdAt: new Date().toISOString() })
 
     try {
-        await newPostMessage.save(); // this is saved
-
-        res.status(201).json(newPostMessage );
+        let result = await newPostMessage.save(); // this is saved
+        
+        res.status(201).json(result);
     } catch (error) {
         res.status(409).json({ message: error.message });
     }
