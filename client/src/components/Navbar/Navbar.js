@@ -93,7 +93,7 @@ const Navbar = () => {
 
                         <ColorButtonRed   component={Link} to="/Home"    size="small" size="small" variant="contained" >Home</ColorButtonRed>
                     
-                        <ColorButtonGray  component={Link} to="/History" size="small" size="small" variant="contained" >Past </ColorButtonGray>
+                        <ColorButtonGray  component={Link} to="/Past" size="small" size="small" variant="contained" >Past </ColorButtonGray>
                     
                         <ColorButtonBlue  component={Link} to="/Graph"   size="small" size="small" variant="contained" >Graph</ColorButtonBlue>
                     

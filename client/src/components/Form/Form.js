@@ -31,26 +31,42 @@ const Form = ({ currentId, setCurrentId }) =>{
     };
 
 
+    function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+      }
+      
+      async function test() {
+        console.log('start timer');
+        await delay(1000);
+        console.log('after 1 second');
+      }
+      
+    
+
     const handleSubmit = () => {
 
-        var totalAmount = calcTotal();
+        var varTotal = calcTotal();
+        // postData.checkOutTotal
+        var varTotalAfter = varTotal - postData.checkOutTotal;
+        
+        if(varTotal > postData.checkOutTotal) {
 
-        axios({
-            method: "POST",
-            url: 'http://localhost:5000/posts',
-            data: postData,
-            
-        })
-        .then((res) => { 
-            console.log("-----");
-            setOutPostData({...postData, totalBefore: totalAmount, totalAfter: totalAmount - postData.checkOutTotal });
+        
+           
+            setOutPostData({  bill1: 0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0 , totalBefore: varTotal, totalAfter: varTotalAfter})
+           
             console.log(outPostData);
-            console.log(res.data);
+        
 
-        }) //function goes good
-        .catch((err) => {
-            console.log(err);
-        })// if goes bad
+            axios({method: "POST", url: 'http://localhost:5000/posts', data: postData,})
+            .then((res)  => {console.log("POST Success"); }) //function goes good
+            .catch((err) => {console.log(err);})// if goes bad
+        }
+        else{
+            setOutPostData({bill1:0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0, totalBefore: 0, totalAfter: varTotalAfter}); 
+            console.log("No bills 0 all");
+        }
+        
     };
 
     const fontColorPos = {
@@ -91,14 +107,14 @@ const Form = ({ currentId, setCurrentId }) =>{
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Paper className={classes.paper} >
-                                <Typography variant="h5" align='center'>Tips you keep</Typography>
+                                <Typography variant="h5" align='center'>Tips you keep <br></br>--Work In Progress--<br></br>--Amounts Work Though--</Typography>
                                 <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label="  1x" value={String(outPostData.bill1)}></TextField>
                                 <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label="  5x" value={String(outPostData.bill5)}></TextField>
                                 <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label=" 10x" value={String(outPostData.bill10)}></TextField>
                                 <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label=" 20x" value={String(outPostData.bill20)}></TextField>
                                 <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label=" 50x" value={String(outPostData.bill50)}></TextField>  
                                 <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label="100x" value={String(outPostData.bill100)}></TextField>
-                                <TextField disabled className={classes.textSpace} fullWidth variant="outlined" label="Before Total Amount" value={String(outPostData.totalBefore)}></TextField>   
+                                <TextField  className={classes.textSpace} fullWidth variant="outlined" label="Before Total Amount" value={String(outPostData.totalBefore)}></TextField>   
                                 <TextField  inputProps={ outPostData.totalAfter >= 0 ? fontColorPos : fontColorRed } className={ classes.textSpace} fullWidth variant="outlined" label="After Total Amount"  value={String(outPostData.totalAfter)} ></TextField>   
                             </Paper>""
                         </Grid>

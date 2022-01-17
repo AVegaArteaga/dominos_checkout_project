@@ -15,6 +15,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
+import Past from './components/Past/Past'
 import DevolperInfo from './components/DevolperInfo/DevolperInfo';
 // import Auth from './components/Auth/Auth';
 
@@ -30,6 +31,7 @@ const App = () => {
                 <Navbar />
                 <Routes>
                     <Route exact path="/Home" element={<Home/>}/>
+                    <Route exact path="/Past" element={<Past/>}/>
                     <Route exact path="/Dev"  element={<DevolperInfo/>}/> 
                 </Routes>
             </Container>

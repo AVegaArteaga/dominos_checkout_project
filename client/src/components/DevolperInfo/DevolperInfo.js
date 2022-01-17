@@ -1,15 +1,17 @@
 import React from 'react';
 import { Slide } from "react-slideshow-image";
+
 import "./Devolperinfo.css";
+
+
 import 'react-slideshow-image/dist/styles.css'
 
 import image1 from "../../images/DevInfoSlides/pic1.jpg";
 import image2 from "../../images/DevInfoSlides/pic2.gif";
 import image3 from "../../images/DevInfoSlides/pic3.jpg";
-
+import {isMobile, MobileView} from 'react-device-detect';
 
 //data grids
-
 
 const DevolperInfo = () => {
     
@@ -26,14 +28,17 @@ const DevolperInfo = () => {
         
     };
     
+    
+    const eachFade = isMobile ? "each-fade" : "each-fade-mobile";
     return (
+        
+    
         <div>
-            <h2>Fade Effect</h2>
             <div className="slide-container">
             <Slide arrows={false} {...fadeProperties}>
-                <div className="each-fade">
+                <div className={eachFade}>
                     <div>
-                    <img src={images[0]} alt='11' />
+                    <img src={images[0]} alt='1' />
                     </div>
                     <p>
                         My name is Abel Vega Arteaga. I graduated from Northern Illinois University<br></br>
@@ -42,26 +47,25 @@ const DevolperInfo = () => {
                         The purpose of this project is to practice Mern Full-stack application. <br></br>
                     </p>
                 </div>
-                <div className="each-fade" >
+                <div className={eachFade} >
                     <div>
-                    <img src={images[1]} alt='12'/>
+                    <img src={images[1]} alt='2'/>
                     </div>
                     <p>
                         In this Project, We will take in all the bills the <br></br>drivers would collect throught the day;<br></br><br></br>
                         At the end of the night, the driver would need to pay back any cash orders, <br></br>the left overs would be theirs to keep.<br></br>
                         Drivers would see their pasts tips and keep what they owe. <br></br>
-
                     </p>
                 </div>
-                <div className="each-fade">
+                <div className={eachFade}>
                     <div>
-                    <img src={images[2]} alt='13'/>
+                    <img src={images[2]} alt='3'/>
                     </div>
                     <p>
-                        For Social Media Stuff:<br></br><br></br>
-                        SnapChat: abelvega1<br></br>
+                        Devolper Contect Infomation:<br></br><br></br>
+                        LinkedIn:
                         Steam: 105277970<br></br>
-                        Email: abelvega102@gmail.com
+                        Email: abelvega102@gmail.com<br></br>
 
                     </p>
                 </div>
@@ -72,6 +76,7 @@ const DevolperInfo = () => {
             I do not own the Dominos logo, just doing this for fun. Also im lazy when im counting
         </p>    
     </div>
+    
     );
 };
 
