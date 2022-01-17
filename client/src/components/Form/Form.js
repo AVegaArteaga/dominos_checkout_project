@@ -51,15 +51,15 @@ const Form = ({ currentId, setCurrentId }) =>{
         
         if(varTotal > postData.checkOutTotal) {
 
-        
+    
            
             setOutPostData({  bill1: 0, bill5: 0, bill10: 0, bill20: 0, bill50: 0, bill100: 0 , totalBefore: varTotal, totalAfter: varTotalAfter})
            
-            console.log(outPostData);
+            console.log(postData);
         
 
             axios({method: "POST", url: 'http://localhost:5000/posts', data: postData,})
-            .then((res)  => {console.log("POST Success"); }) //function goes good
+            //.then((res)  => { }) //function goes good
             .catch((err) => {console.log(err);})// if goes bad
         }
         else{
