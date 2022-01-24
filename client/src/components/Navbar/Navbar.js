@@ -2,18 +2,18 @@
 import React, { useEffect} from 'react';
 
 import {Link, useLocation} from 'react-router-dom';
-import logo from '../../images/dominos-pizza-4-logo-png-transparent.png';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Stack } from '@mui/material';
-
 import { styled } from '@mui/material/styles';
 
 import { grey, red, blue, pink, white } from '@mui/material/colors';
 import styles from './styles';
+
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 
 const ColorButtonRed = styled(Button)(({ theme }) => ({
     
@@ -85,7 +85,7 @@ const Navbar = () => {
                     
                         <Typography variant="h8" sx={{ flexGrow: 1 }}>
                             Check Out
-                            <img className={classes.image} src={logo} alt="memories" height={20} width={20}/>
+                            <LocalAtmIcon/>
                         </Typography>
                     
                    

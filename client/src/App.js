@@ -17,7 +17,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Past from './components/Past/Past'
 import DevolperInfo from './components/DevolperInfo/DevolperInfo';
-// import Auth from './components/Auth/Auth';
+import Graph from './components/Graph/Graph';
 
 const App = () => {
 
@@ -32,6 +32,7 @@ const App = () => {
                 <Routes>
                     <Route exact path="/Home" element={<Home/>}/>
                     <Route exact path="/Past" element={<Past/>}/>
+                    <Route exact path="/Graph" element={<Graph/>}/>
                     <Route exact path="/Dev"  element={<DevolperInfo/>}/> 
                 </Routes>
             </Container>

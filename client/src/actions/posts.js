@@ -1,5 +1,5 @@
 
-// eslint-disable-next-line
+
 import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
 
 import * as api from '../api/index.js';
@@ -44,12 +44,12 @@ export const createPost = (post) => async (dispatch) => {
 //   }
 // };
 
-// export const deletePost = (id) => async (dispatch) => {
-//   try {
-//     await api.deletePost(id);
+export const deletePost = (id) => async (dispatch) => {
+  try {
+    await api.deletePost(id);
 
-//     dispatch({ type: DELETE, payload: id });
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
+    dispatch({ type: DELETE, payload: id });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
